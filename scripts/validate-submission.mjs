@@ -1,8 +1,12 @@
 import assert from "node:assert/strict";
+import { access } from "node:fs/promises";
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const document = await readFile(resolve("docs/openai-submission.md"), "utf8");
+await access(resolve("assets/wedding-studio-logo.svg"));
+const logo = await readFile(resolve("assets/wedding-studio-logo.svg"), "utf8");
+assert.match(logo, /^<svg\b[^>]*viewBox=/, "listing logo must be a viewBox SVG");
 const positives = [...document.matchAll(/^### Positive test \d+:/gm)];
 const negatives = [...document.matchAll(/^### Negative test \d+:/gm)];
 

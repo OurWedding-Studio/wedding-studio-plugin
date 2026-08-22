@@ -16,6 +16,7 @@ The submission portal and current requirements are documented by OpenAI at
 | Category | Productivity |
 | MCP endpoint | `https://mcp.ourwedding.studio/mcp` |
 | Website | `https://www.locationsap.com/` |
+| Listing logo | `assets/wedding-studio-logo.svg` (upload to the portal) |
 | Languages | German and English |
 | Capability | Project-scoped wedding planning with read and explicit proposal writes |
 
