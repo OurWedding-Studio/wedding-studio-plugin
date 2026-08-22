@@ -3,16 +3,37 @@
 Wedding Studio gives ChatGPT a secure, project-scoped connection to a Wedding
 Studio wedding plan. It supports German and English conversations.
 
-## Install from the public marketplace
+## Install in Codex
 
 ```bash
 codex plugin marketplace add OurWedding-Studio/wedding-studio-plugin
 codex plugin add wedding-studio@wedding-studio-public
 ```
 
-The same account connection can be used from supported desktop and mobile
-ChatGPT clients. OAuth selects exactly one Wedding Studio project. Never share
-OAuth tickets, access tokens or connection URLs in chat.
+This installs the public Codex plugin bundle. It is separate from the global
+ChatGPT app catalog: a local/personal Codex plugin cannot make itself appear
+as an officially listed ChatGPT app. Official catalog visibility requires the
+platform's separate review and submission process, including approved public
+privacy and terms pages.
+
+## Connect ChatGPT and use it on mobile
+
+ChatGPT custom MCP connections are set up from a supported desktop client. Add
+this server URL exactly once, complete the OAuth flow, and select one Wedding
+Studio project:
+
+```text
+https://mcp.ourwedding.studio/mcp
+```
+
+After the desktop connection is authorized, open ChatGPT on the phone with the
+same account and select Wedding Studio if the client exposes connected apps on
+mobile. The phone is a consumer of the account connection; it is not the place
+to create or repeatedly re-authorize it.
+
+If OAuth returns `401`, `429`, or `OAUTH_INTERACTION_EXPIRED`, stop and start
+exactly one fresh connection. Do not open parallel consent windows and never
+paste OAuth tickets, access tokens, callback URLs or secrets into chat.
 
 ## What it can do
 
