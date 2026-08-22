@@ -1,0 +1,33 @@
+{
+  "contractVersion": "2026-08-22",
+  "server": "wedding-studio",
+  "endpoint": "https://mcp.ourwedding.studio/mcp",
+  "tools": [
+    "get_connection_capabilities",
+    "list_wedding_projects",
+    "get_vendor_intake_contract",
+    "get_wedding_summary",
+    "get_wedding_context",
+    "list_granted_documents",
+    "get_document_content",
+    "get_offer_comparison",
+    "get_planning_health",
+    "get_rsvp_follow_up",
+    "get_standard_timeline_template",
+    "list_pending_proposals",
+    "get_project_changes",
+    "revert_change",
+    "get_guest_list",
+    "get_guest_household",
+    "get_seating_constraints",
+    "get_wedding_discovery_context",
+    "search_saved_vendors",
+    "get_vendor_record",
+    "preview_vendor_import",
+    "commit_vendor_import",
+    "preview_vendor_update",
+    "commit_vendor_update",
+    "preview_write",
+    "commit_write"
+  ]
+}

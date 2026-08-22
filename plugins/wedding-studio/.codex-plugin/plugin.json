@@ -1,0 +1,48 @@
+{
+  "name": "wedding-studio",
+  "version": "0.2.0",
+  "description": "Bilingual, project-scoped wedding planning through the Wedding Studio MCP connection.",
+  "author": {
+    "name": "OurWedding Studio",
+    "url": "https://www.locationsap.com/"
+  },
+  "homepage": "https://www.locationsap.com/",
+  "repository": "https://github.com/OurWedding-Studio/wedding-studio-plugin",
+  "license": "MIT",
+  "keywords": [
+    "wedding",
+    "hochzeit",
+    "wedding-planner",
+    "hochzeitsplanung",
+    "vendors",
+    "budget",
+    "timeline",
+    "seating",
+    "mcp",
+    "oauth"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Wedding Studio",
+    "shortDescription": "Plan your wedding with one secure project context.",
+    "longDescription": "Wedding Studio verbindet ChatGPT über OAuth 2.1/PKCE mit genau einem freigegebenen Hochzeitsprojekt. Es hilft bei Planung, Timeline, Budget, Anbietern, Angeboten, Dokumenten, RSVP und pseudonymisierter Sitzplanung. Vorschläge werden vor jeder Änderung geprüft; sensible Gästedaten und Dokumente bleiben granulare, widerrufbare Freigaben.",
+    "developerName": "OurWedding Studio",
+    "category": "Productivity",
+    "capabilities": [
+      "MCP",
+      "OAuth",
+      "Read",
+      "Write",
+      "Planning",
+      "Privacy"
+    ],
+    "websiteURL": "https://www.locationsap.com/",
+    "brandColor": "#7C3AED",
+    "defaultPrompt": [
+      "Show the current wedding planning status.",
+      "Vergleiche unsere freigegebenen Anbieterangebote.",
+      "Welche nächsten Planungsschritte sind jetzt offen?"
+    ]
+  },
+  "mcpServers": "./.mcp.json"
+}

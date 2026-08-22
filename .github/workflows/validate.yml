@@ -1,0 +1,40 @@
+name: Validate Wedding Studio plugin
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    name: Package and skill validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+      - name: Validate plugin manifest
+        run: node scripts/validate-package.mjs
+      - name: Validate MCP tool snapshot
+        run: node plugins/wedding-studio/scripts/validate-contract.mjs
+
+  live-canary:
+    name: Daily MCP discovery canary
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+      - name: Check live health and OAuth discovery
+        run: node plugins/wedding-studio/scripts/live-canary.mjs

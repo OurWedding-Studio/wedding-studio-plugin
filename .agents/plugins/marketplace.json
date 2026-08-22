@@ -1,0 +1,20 @@
+{
+  "name": "wedding-studio-public",
+  "interface": {
+    "displayName": "Wedding Studio"
+  },
+  "plugins": [
+    {
+      "name": "wedding-studio",
+      "source": {
+        "source": "local",
+        "path": "./plugins/wedding-studio"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
