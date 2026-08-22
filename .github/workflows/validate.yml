@@ -26,6 +26,8 @@ jobs:
         run: node scripts/validate-package.mjs
       - name: Validate MCP tool snapshot
         run: node plugins/wedding-studio/scripts/validate-contract.mjs
+      - name: Validate OpenAI submission pack
+        run: node scripts/validate-submission.mjs
 
   live-canary:
     name: Daily MCP discovery canary
