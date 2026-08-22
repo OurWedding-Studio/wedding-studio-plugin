@@ -16,20 +16,30 @@ as an officially listed ChatGPT app. Official catalog visibility requires the
 platform's separate review and submission process, including approved public
 privacy and terms pages.
 
-## Connect ChatGPT and use it on mobile
+## ChatGPT Web and Work
 
-ChatGPT custom MCP connections are set up from a supported desktop client. Add
-this server URL exactly once, complete the OAuth flow, and select one Wedding
-Studio project:
+For a personal ChatGPT connection, add this server URL from a supported web or
+desktop setup flow exactly once, complete OAuth, and select one Wedding Studio
+project:
 
 ```text
 https://mcp.ourwedding.studio/mcp
 ```
 
-After the desktop connection is authorized, open ChatGPT on the phone with the
-same account and select Wedding Studio if the client exposes connected apps on
-mobile. The phone is a consumer of the account connection; it is not the place
-to create or repeatedly re-authorize it.
+For ChatGPT Work, an authorized workspace admin/owner must create the custom MCP
+app in Workspace settings → Apps → Create, enter the endpoint, scan the tools,
+complete OAuth, create the draft, then publish it from Drafts. The workspace
+must also make the plugin available and grant the relevant role access. A
+personal Codex marketplace entry or a GitHub repository does not publish a
+ChatGPT directory listing by itself.
+
+OpenAI currently documents full custom MCP apps, including write actions, as
+web-only. The native ChatGPT smartphone app therefore must not be described as
+supporting this full MCP connection. Use ChatGPT Web for the complete
+Wedding-Studio capability set until OpenAI exposes custom MCP apps on mobile.
+The plugin may still be visible in a directory on a supported surface, but
+visibility and usable app capabilities depend on plan, workspace, role and
+surface.
 
 If OAuth returns `401`, `429`, or `OAUTH_INTERACTION_EXPIRED`, stop and start
 exactly one fresh connection. Do not open parallel consent windows and never
