@@ -76,6 +76,7 @@ Validate the package before publishing:
 ```bash
 python3 ~/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py plugins/wedding-studio
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py plugins/wedding-studio/skills/wedding-studio
+node plugins/wedding-studio/scripts/verify-server-contract.mjs --server-file /absolute/path/to/wedding-studio/services/wedding-mcp/src/index.ts
 ```
 
 The MCP tool snapshot is in
