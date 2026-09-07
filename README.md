@@ -76,12 +76,16 @@ Validate the package before publishing:
 ```bash
 python3 ~/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py plugins/wedding-studio
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py plugins/wedding-studio/skills/wedding-studio
+node plugins/wedding-studio/scripts/verify-server-contract.mjs --server-file /absolute/path/to/wedding-studio/services/wedding-mcp/src/index.ts
 ```
 
 The MCP tool snapshot is in
 `plugins/wedding-studio/references/mcp-tool-contract.json`. The private MCP
-repository owns the executable server contract and must update this snapshot
-only when the live `/mcp` tool list has been verified.
+repository owns the executable server contract. A snapshot marked
+`source_pending_server_release` describes one named server revision and must
+not be presented as live capability. It becomes `live_verified` only after the
+release is deployed and `scripts/live-canary.mjs` confirms the public OAuth
+scope contract. This keeps source and production evidence separate.
 
 ## Publication gate
 
