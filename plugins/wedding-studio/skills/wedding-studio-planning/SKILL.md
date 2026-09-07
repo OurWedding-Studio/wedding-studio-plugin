@@ -14,8 +14,14 @@ Ground every answer in the selected project's live data.
   `finance`, `timeline` or `decisions`.
 - Use `get_planning_health` for risk flags and `get_standard_timeline_template`
   for non-mutating milestone candidates.
+- Use `get_budget_payment_schedule` for due dates, open commitments and an
+  explicit reserve; use `get_budget_reduction_scenarios` for evidence-based
+  savings alternatives. Neither tool changes, pays or cancels anything.
 - Use `list_pending_proposals` and `get_project_changes` when the user asks
   what is awaiting approval or what changed.
+- Use `get_planning_change_feed` only with the last fully processed audit
+  watermark. Treat `live_conditions` as current status, never as a message
+  already sent to a vendor or guest.
 
 Present facts, source evidence, confidence, blockers and next actions
 separately. Preserve cursors for paginated locations or records. Never turn a

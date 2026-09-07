@@ -5,8 +5,10 @@ description: Review, approve, audit, or safely revert Wedding Studio MCP proposa
 
 # Proposals and changes
 
-Use `list_pending_proposals` for review state and `get_project_changes` for the
-append-only audit feed. `revert_change` prepares a candidate; it does not write
+Use `list_pending_proposals` for review state, `get_project_changes` for the
+append-only audit feed and `get_planning_change_feed` for quiet polling after a
+saved watermark. `get_change_compensation` prepares a deterministic
+compensating candidate for one eligible accepted record; it does not write
 anything by itself.
 
 For every new mutation:

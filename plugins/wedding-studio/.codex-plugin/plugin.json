@@ -1,6 +1,6 @@
 {
   "name": "wedding-studio",
-  "version": "0.2.0",
+  "version": "0.2.0+codex.20260907121408",
   "description": "Bilingual, project-scoped wedding planning through the Wedding Studio MCP connection.",
   "author": {
     "name": "OurWedding Studio",
@@ -25,7 +25,7 @@
   "interface": {
     "displayName": "Wedding Studio",
     "shortDescription": "Plan your wedding with one secure project context.",
-    "longDescription": "Wedding Studio verbindet ChatGPT über OAuth 2.1/PKCE mit genau einem freigegebenen Hochzeitsprojekt. Es hilft bei Planung, Timeline, Budget, Anbietern, Angeboten, Dokumenten, RSVP und pseudonymisierter Sitzplanung. Vorschläge werden vor jeder Änderung geprüft; sensible Gästedaten und Dokumente bleiben granulare, widerrufbare Freigaben.",
+    "longDescription": "Wedding Studio verbindet ChatGPT \u00fcber OAuth 2.1/PKCE mit genau einem freigegebenen Hochzeitsprojekt. Es hilft bei Planung, Timeline, Budget, Anbietern, Angeboten, Dokumenten, RSVP und pseudonymisierter Sitzplanung. Vorschl\u00e4ge werden vor jeder \u00c4nderung gepr\u00fcft; sensible G\u00e4stedaten und Dokumente bleiben granulare, widerrufbare Freigaben.",
     "developerName": "OurWedding Studio",
     "category": "Productivity",
     "capabilities": [
@@ -41,7 +41,7 @@
     "defaultPrompt": [
       "Show the current wedding planning status.",
       "Vergleiche unsere freigegebenen Anbieterangebote.",
-      "Welche nächsten Planungsschritte sind jetzt offen?"
+      "Welche n\u00e4chsten Planungsschritte sind jetzt offen?"
     ]
   },
   "mcpServers": "./.mcp.json"

@@ -10,5 +10,19 @@ if (!/^20\d\d-\d\d-\d\d$/.test(contract.contractVersion)) throw new Error("Inval
 if (!Array.isArray(contract.tools) || contract.tools.length < 20) throw new Error("MCP contract is unexpectedly small");
 if (new Set(contract.tools).size !== contract.tools.length) throw new Error("MCP contract contains duplicate tool names");
 if (contract.tools.some((tool) => !/^[a-z][a-z0-9_]+$/.test(tool))) throw new Error("MCP contract contains an invalid tool name");
+if (!Array.isArray(contract.scopes) || contract.scopes.length < 10) throw new Error("MCP contract has an invalid scope snapshot");
+if (new Set(contract.scopes).size !== contract.scopes.length) throw new Error("MCP contract contains duplicate scopes");
+if (contract.scopes.some((scope) => !/^[a-z]+(?:[.:][a-z_]+)+$/.test(scope))) throw new Error("MCP contract contains an invalid scope name");
+if (!contract.toolScopes || typeof contract.toolScopes !== "object" || Array.isArray(contract.toolScopes)) throw new Error("MCP contract has no tool-to-scope mapping");
 
-console.log(`MCP contract valid: ${contract.tools.length} tools (${contract.contractVersion})`);
+for (const tool of contract.tools) {
+  const requiredScopes = contract.toolScopes[tool];
+  const isValid = requiredScopes === "proposal-specific" || (Array.isArray(requiredScopes) && requiredScopes.every((scope) => contract.scopes.includes(scope)));
+  if (!isValid) throw new Error(`MCP contract has an invalid scope mapping for ${tool}`);
+}
+
+for (const tool of Object.keys(contract.toolScopes)) {
+  if (!contract.tools.includes(tool)) throw new Error(`MCP contract maps an unknown tool: ${tool}`);
+}
+
+console.log(`MCP contract valid: ${contract.tools.length} tools, ${contract.scopes.length} scopes (${contract.contractVersion})`);

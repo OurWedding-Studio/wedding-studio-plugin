@@ -15,6 +15,8 @@ project. Answer in the user's language, normally German or English.
 - Guests, RSVP or seating: use the guests skill.
 - Proposed changes, approvals, audit history or reverts: use the proposals skill.
 - Document permissions, metadata or evidence extraction: use the documents skill.
+- Moodboards, style implications, vendor briefings or guest-page drafts: use the
+  moodboards skill.
 - OAuth, reconnect, 401, 429 or expired consent: use the connection skill.
 
 ## Invariants
