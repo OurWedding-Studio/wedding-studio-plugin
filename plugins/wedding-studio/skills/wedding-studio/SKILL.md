@@ -17,6 +17,8 @@ project. Answer in the user's language, normally German or English.
 - Document permissions, metadata or evidence extraction: use the documents skill.
 - Moodboards, style implications, vendor briefings or guest-page drafts: use the
   moodboards skill.
+- A first offer check, next actions, guests/seating or a guest-page start: use
+  the first-steps skill.
 - OAuth, reconnect, 401, 429 or expired consent: use the connection skill.
 
 ## Invariants
