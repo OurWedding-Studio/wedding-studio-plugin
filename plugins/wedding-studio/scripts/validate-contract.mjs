@@ -7,6 +7,8 @@ const contract = JSON.parse(await readFile(file, "utf8"));
 if (contract.server !== "wedding-studio") throw new Error("Unexpected MCP server name");
 if (!/^https:\/\/mcp\.ourwedding\.studio\/mcp$/.test(contract.endpoint)) throw new Error("Unexpected MCP endpoint");
 if (!/^20\d\d-\d\d-\d\d$/.test(contract.contractVersion)) throw new Error("Invalid contract version");
+if (!["source_pending_server_release", "live_verified"].includes(contract.snapshotState)) throw new Error("Invalid MCP snapshot state");
+if (!/^[0-9a-f]{40}$/.test(contract.sourceServerRevision ?? "")) throw new Error("Invalid source server revision");
 if (!Array.isArray(contract.tools) || contract.tools.length < 20) throw new Error("MCP contract is unexpectedly small");
 if (new Set(contract.tools).size !== contract.tools.length) throw new Error("MCP contract contains duplicate tool names");
 if (contract.tools.some((tool) => !/^[a-z][a-z0-9_]+$/.test(tool))) throw new Error("MCP contract contains an invalid tool name");
